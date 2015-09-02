@@ -1,12 +1,11 @@
-FROM debian:wheezy
+FROM gliderlabs/alpine:3.2
 MAINTAINER Adam Greene <adam.greene@gmail.com>
 
-RUN	apt-get update && \
-    apt-get install -y python-pip groff-base && \
-    apt-get clean && \
-	rm -rf /var/lib/apt/lists/*
-
-RUN pip install awscli==1.8.1
+RUN apk add --update \
+    py-pip \
+    groff \
+  && pip install awscli==1.8.1 \
+  && rm -rf /var/cache/apk/*
 
 WORKDIR /aws
 
