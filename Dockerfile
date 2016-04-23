@@ -4,7 +4,7 @@ MAINTAINER Adam Greene <adam.greene@gmail.com>
 RUN apk add --update \
     py-pip \
     groff \
-  && pip install awscli==1.8.1 \
+  && pip install awscli==1.10.21 \
   && rm -rf /var/cache/apk/*
 
 WORKDIR /aws
